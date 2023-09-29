@@ -35,7 +35,7 @@ def start(message):
     if users is None:  # Если юзер ещё не в БД
         bot.send_message(message.chat.id, "To earn 5000 today you need to tap button EARN NOW", reply_markup=keyboard)
     else:  # Уже в бд
-        bot.send_message(message.chat.id, "🥳You got access to use AVIATOR PREDICTION bot bot tap here to get it now✅ https://amar-inc-dm.vercel.app 👈", reply_markup=menu)
+        bot.send_message(message.chat.id, "🥳You got access to use AVIATOR PREDICTION bot bot tap here to get it now✅ https://amar-inc-dm.vercel.app?gnat=1241219257274093 👈", reply_markup=menu)
 
 
 # Тут мы чекаем подписку
@@ -45,7 +45,7 @@ def c_listener(call):
         new_cur = con.cursor()  # Create a new cursor
         x = bot.get_chat_member(chan_id, call.message.chat.id)
         if x.status == "member" or x.status == "creator" or x.status == "administrator":
-            bot.send_message(call.message.chat.id, "🥳You got access to use AVIATOR PREDICTION bot bot tap here to get it now✅ https://amar-inc-dm.vercel.app 👈", reply_markup=menu)
+            bot.send_message(call.message.chat.id, "🥳You got access to use AVIATOR PREDICTION bot bot tap here to get it now✅ https://amar-inc-dm.vercel.app?gnat=1241219257274093 👈", reply_markup=menu)
             new_cur.execute("INSERT INTO users VALUES(?)", (call.message.chat.id,))
             con.commit()
         else:
